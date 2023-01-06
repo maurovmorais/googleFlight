@@ -130,27 +130,29 @@
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Site\wf_PreencherPesquisa.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Site\wf_PreencherPesquisa.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="arg_strOrigem">[in_TransactionItem.SpecificContent("SIGLA_ORIG").ToString]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="arg_strDestino">[in_TransactionItem.SpecificContent("SIGLA_DEST").ToString]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="arg_strDataIda">[in_TransactionItem.SpecificContent("DATA_IDA").ToString]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="arg_strDataVolta">[in_TransactionItem.SpecificContent("DATA_VOLTA").ToString]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="arg_strClasse">[in_TransactionItem.SpecificContent("CLASSE").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="arg_strOrigem">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;SIGLA_ORIG&quot;).ToString" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="arg_strDestino">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;SIGLA_DEST&quot;).ToString" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="arg_strDataIda">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;DATA_IDA&quot;).ToString" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="arg_strDataVolta">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;DATA_VOLTA&quot;).ToString" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="arg_strClasse">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;CLASSE&quot;).ToString" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Site\wf_ValidaExistePesquisa.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Site\wf_ValidaExistePesquisa.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-            <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-          </InArgument>
-          <InArgument x:TypeArguments="ui:Browser" x:Key="arg_in_brwURLSite">
-            <VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="arg_in_brwURL" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="arg_in_strIndiceLinha">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;LINHA&quot;).ToString" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="arg_in_strDataConsulta">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;DATA_CONSULTA&quot;).ToString" />
-          </InArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+          <InArgument x:TypeArguments="ui:Browser" x:Key="arg_in_brwURLSite">[arg_in_brwURL]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="arg_in_strIndiceLinha">[in_TransactionItem.SpecificContent("LINHA").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="arg_in_strDataConsulta">[in_TransactionItem.SpecificContent("DATA_CONSULTA").ToString]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Site\wf_FiltroPreco.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Site\wf_FiltroPreco.xaml">
