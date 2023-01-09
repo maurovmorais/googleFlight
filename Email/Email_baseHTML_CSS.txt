@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+ 
+
+<head>
+<meta charset="UTF-8">
+</head>
+
+ 
+
+<style>
+    hr {
+        /* Linha de divisão */
+        border: 1px solid #66cc33;
+        border-top: 2px solid #66cc33;
+    }
+
+ 
+
+    .Titulo {
+        /* Titulo superior no email */
+        text-align: center;
+        font-size: 30PX;
+        font-family: Arial;
+        font-weight: bold;
+        padding-top: 15px;
+        color: rgb(141, 141, 141)
+    }
+
+ 
+
+    .SubTitulo {
+        font-size: 14px;
+        font-weight: lighter;
+    }
+
+ 
+
+    .Corpo {
+        /* Corpo do email */
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        text-align: justify;
+        font-family: Arial;
+        font-size: 17px;
+    }
+
+ 
+
+    .Assinatura {
+        /* Assinatura do email */
+        font-size: 13px;
+        text-align: center;
+        font-family: Arial;
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        vertical-align: middle
+
+ 
+
+    }
+    /* Tabela de dados */
+    .Tabela {
+        text-align: center;
+        width: 86%;
+        margin-right: 7%;
+        margin-left: 7%;
+        border-collapse: collapse;
+        font-family: Arial;
+    }
+
+ 
+
+    td {
+        padding: 3px;
+        border: 1px solid rgb(73, 73, 73);
+      }
+
+    th {
+        padding: 3px;
+        border: 1px solid rgb(73, 73, 73);
+      }
+
+ 
+
+    .TituloTabela {
+        background-color: #66cc33;
+        color: rgb(255, 255, 255);
+    }
+
+ 
+
+    .LinhasTabela {
+        border-bottom: 1px solid rgb(151, 151, 151);
+    }
+
+    tr:nth-child(even){
+        background: #EEE
+    }
+
+ 
+
+</style>
+
+ 
+
+<body>
+<div class="Titulo">
+        {{TituloPrincipal}}<br>
+<div class="SubTitulo">{{SubTitulo}}</div>
+<hr><!-- Linha de divisão -->
+</div>
+
+ 
+
+    <div class="Corpo">
+<!-- Corpo do email -->
+        {{CorpoEmail}}
+<br>.<br>.
+</div>
+<hr> <!-- Linha de divisão -->
+<div class="Assinatura">
+<img src="" width="120" style="margin-right:20px ">
+        | {{Area}} | {{SiglaRobo}}
+</div>
+<hr><!-- Linha de divisão -->
+</body>
+
+ 
+
+</html>
