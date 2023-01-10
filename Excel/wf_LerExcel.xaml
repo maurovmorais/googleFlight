@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1187.2,1920.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="875.2,1920.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
       <x:String>System.Activities</x:String>
@@ -37,7 +37,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="88">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -81,6 +81,7 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="671.2,1856" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -185,8 +186,9 @@
                       <InArgument x:TypeArguments="x:String" x:Key="DATA_IDA">[var_strDataIda]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="DATA_VOLTA">[var_strDataVolta]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="CLASSE">[viagem.Item("Classe").ToString]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="LINHA">["I"+(var_intIndiceLinha+2).ToString]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="DATA_CONSULTA">["J"+(var_intIndiceLinha+2).ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="LINHA">["J"+(var_intIndiceLinha+2).ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="DATA_CONSULTA">["K"+(var_intIndiceLinha+2).ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="PERCURSO">[viagem.Item("Percurso").ToString]</InArgument>
                     </ui:AddQueueItem.ItemInformation>
                     <ui:AddQueueItem.ItemInformationCollection>
                       <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
