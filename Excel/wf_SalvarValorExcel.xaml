@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1187.2,830.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1413.6,1315.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>wf_SalvarValorExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -91,28 +91,44 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="wf_SalvarValorExcel" sap:VirtualizedContainerService.HintSize="476.8,765.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="wf_SalvarValorExcel" sap:VirtualizedContainerService.HintSize="520,1250.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Salvandi Dados Extraidos na planilha&quot;]" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[arg_in_DtExtraida]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="433.6,543.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="476.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Salvandi Dados Extraidos na planilha&quot;]" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[arg_in_DtExtraida]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="476.8,1028" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="valor" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,426.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="443.2,911.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:WriteCell Cell="[arg_in_strIndiceLinha]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="356.8,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="pesquisa" Text="[valor.Item(&quot;Valor&quot;).ToString]" WorkbookPath="Data\Input\Dados.xlsx" />
-            <ui:WriteCell Cell="[arg_in_strDataConsulta]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="356.8,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="pesquisa" Text="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" WorkbookPath="Data\Input\Dados.xlsx" />
-            <ui:Break sap:VirtualizedContainerService.HintSize="356.8,24.8" sap2010:WorkflowViewState.IdRef="Break_1" />
+            <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Delay DisplayName=" Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            </Sequence>
+            <ui:WriteCell Cell="[arg_in_strIndiceLinha]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="400,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="pesquisa" Text="[valor.Item(&quot;Valor&quot;).ToString]" WorkbookPath="Data\Input\Dados.xlsx" />
+            <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Delay DisplayName=" Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            </Sequence>
+            <ui:WriteCell Cell="[arg_in_strDataConsulta]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="400,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="pesquisa" Text="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" WorkbookPath="Data\Input\Dados.xlsx" />
+            <ui:Break sap:VirtualizedContainerService.HintSize="400,24.8" sap2010:WorkflowViewState.IdRef="Break_1" />
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>

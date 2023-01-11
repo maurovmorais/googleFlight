@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="wf_ScreenshotPlanilha" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1101.6,826.4" sap2010:WorkflowViewState.IdRef="wf_ScreenshotPlanilha_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="wf_ScreenshotPlanilha" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1413.6,826.4" sap2010:WorkflowViewState.IdRef="wf_ScreenshotPlanilha_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
       <x:String>System.Activities</x:String>
@@ -63,13 +63,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="Data\Input\Dados.xlsx" sap:VirtualizedContainerService.HintSize="400,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-    <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Delay DisplayName=" Delay 500 Milliseconds" Duration="00:00:00.5000000" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+      <Delay DisplayName=" Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
     </Sequence>
     <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'excel.exe Dados.xlsx'" sap:VirtualizedContainerService.HintSize="400,107.2" sap2010:WorkflowViewState.IdRef="TakeScreenshot_2" Screenshot="[var_imgScreenshot]">
       <ui:TakeScreenshot.Target>
