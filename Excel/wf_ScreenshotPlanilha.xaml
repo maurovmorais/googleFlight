@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="wf_ScreenshotPlanilha" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1413.6,826.4" sap2010:WorkflowViewState.IdRef="wf_ScreenshotPlanilha_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="wf_ScreenshotPlanilha" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="arg_in_strCaminhoPlanilha" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>847.2,806.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>wf_ScreenshotPlanilha_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
       <x:String>System.Activities</x:String>
@@ -30,7 +38,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="42">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -51,6 +59,7 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="wf_ScreenshotPlanilha" sap:VirtualizedContainerService.HintSize="443.2,741.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -62,7 +71,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="Data\Input\Dados.xlsx" sap:VirtualizedContainerService.HintSize="400,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[arg_in_strCaminhoPlanilha]" sap:VirtualizedContainerService.HintSize="400,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
     <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -73,7 +82,7 @@
     </Sequence>
     <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'excel.exe Dados.xlsx'" sap:VirtualizedContainerService.HintSize="400,107.2" sap2010:WorkflowViewState.IdRef="TakeScreenshot_2" Screenshot="[var_imgScreenshot]">
       <ui:TakeScreenshot.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b4d1b778-688c-4408-8736-644d6a07ca57" InformativeScreenshot="070f0ff7a468c27f32a5fa43561760f0" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Dados.xlsx - Excel' /&gt;&lt;uia automationid='Dados.xlsx' cls='ExcelGrid' name='Dados' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b4d1b778-688c-4408-8736-644d6a07ca57" InformativeScreenshot="070f0ff7a468c27f32a5fa43561760f0" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Dados.*' /&gt;&lt;uia omit:automationid='Dados.xlsx' cls='ExcelGrid' name='Dados' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>

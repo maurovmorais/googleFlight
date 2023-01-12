@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>875.2,2249.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>618.4,1450.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -98,13 +98,13 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="628.8,2184.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="628.8,1385.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="585.6,2095.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="585.6,1296" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="var_dtExtracao" />
       </Sequence.Variables>
@@ -116,7 +116,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="523.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
       <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="523.2,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-      <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;PERCURSO&quot;).ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="523.2,964" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;PERCURSO&quot;).ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="523.2,164.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
         <Switch.Default>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Percurso não encontrado&quot;]" />
         </Switch.Default>
@@ -136,9 +136,7 @@
             <Delay DisplayName=" Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="378.4,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Site\wf_SelecionarPercurso.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Site\wf_SelecionarPercurso.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="arg_in_strPercurso">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;PERCURSO&quot;).ToString" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="arg_in_strPercurso">[in_TransactionItem.SpecificContent("PERCURSO").ToString]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Site\wf_SelecionaClasse.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Site\wf_SelecionaClasse.xaml">
@@ -213,9 +211,18 @@
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\wf_SalvarValorExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="523.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Excel\wf_SalvarValorExcel.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="arg_in_DtExtraida">[var_dtExtracao]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="arg_in_strIndiceLinha">[in_TransactionItem.SpecificContent("LINHA").ToString]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="arg_in_strDataConsulta">[in_TransactionItem.SpecificContent("DATA_CONSULTA").ToString]</InArgument>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="arg_in_DtExtraida">
+            <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="var_dtExtracao" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="arg_in_strIndiceLinha">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;LINHA&quot;).ToString" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="arg_in_strDataConsulta">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;DATA_CONSULTA&quot;).ToString" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="arg_in_strCaminhoPlanilha">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Caminho_planilha&quot;).ToString" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:NavigateTo Browser="[arg_in_brwURL]" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="523.2,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[in_Config(&quot;URL&quot;).ToString]" />

@@ -3,11 +3,12 @@
     <x:Property Name="arg_in_DtExtraida" Type="InArgument(sd:DataTable)" />
     <x:Property Name="arg_in_strIndiceLinha" Type="InArgument(x:String)" />
     <x:Property Name="arg_in_strDataConsulta" Type="InArgument(x:String)" />
+    <x:Property Name="arg_in_strCaminhoPlanilha" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1413.6,1315.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>509.6,1315.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>wf_SalvarValorExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -118,7 +119,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <Delay DisplayName=" Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
             </Sequence>
-            <ui:WriteCell Cell="[arg_in_strIndiceLinha]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="400,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="pesquisa" Text="[valor.Item(&quot;Valor&quot;).ToString]" WorkbookPath="Data\Input\Dados.xlsx" />
+            <ui:WriteCell Cell="[arg_in_strIndiceLinha]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="400,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="pesquisa" Text="[valor.Item(&quot;Valor&quot;).ToString]" WorkbookPath="[arg_in_strCaminhoPlanilha]" />
             <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="400,202.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -127,7 +128,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <Delay DisplayName=" Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="337.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
             </Sequence>
-            <ui:WriteCell Cell="[arg_in_strDataConsulta]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="400,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="pesquisa" Text="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" WorkbookPath="Data\Input\Dados.xlsx" />
+            <ui:WriteCell Cell="[arg_in_strDataConsulta]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="400,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="pesquisa" Text="[Now.ToString(&quot;dd/MM/yyyy&quot;)]" WorkbookPath="[arg_in_strCaminhoPlanilha]" />
             <ui:Break sap:VirtualizedContainerService.HintSize="400,24.8" sap2010:WorkflowViewState.IdRef="Break_1" />
           </Sequence>
         </ActivityAction>
