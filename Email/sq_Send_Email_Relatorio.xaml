@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>847.2,3144.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>605.6,3144.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>sq_Send_Email_Relatorio_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="80">
@@ -399,7 +399,7 @@ var_strHTMLtable+ _
                 <OutArgument x:TypeArguments="x:String">[var_strAnexoEmail]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[Environment.CurrentDirectory+"\Data\Input\Dados.xlsx"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[Environment.CurrentDirectory+"\Data\Input\Dados.xlsm"]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
