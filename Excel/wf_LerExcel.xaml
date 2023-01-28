@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>847.2,1920.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1231.2,1920.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -195,8 +195,12 @@
                       <InArgument x:TypeArguments="x:String" x:Key="DATA_VOLTA">[var_strDataVolta]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="CLASSE">[viagem.Item("Classe").ToString]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="LINHA">["J"+(var_intIndiceLinha+2).ToString]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="DATA_CONSULTA">["K"+(var_intIndiceLinha+2).ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="DATA_CONSULTA">["N"+(var_intIndiceLinha+2).ToString]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="PERCURSO">[viagem.Item("Percurso").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="DURACAO">["K"+(var_intIndiceLinha+2).ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="ESCALA">["L"+(var_intIndiceLinha+2).ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="CIA">["M"+(var_intIndiceLinha+2).ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="LINK">["O"+(var_intIndiceLinha+2).ToString]</InArgument>
                     </ui:AddQueueItem.ItemInformation>
                     <ui:AddQueueItem.ItemInformationCollection>
                       <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />

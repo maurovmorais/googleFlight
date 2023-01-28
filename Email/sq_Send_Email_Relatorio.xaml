@@ -6,10 +6,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>605.6,3144.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>605.6,3269.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>sq_Send_Email_Relatorio_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="80">
+    <scg:List x:TypeArguments="x:String" Capacity="41">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -117,7 +117,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="sq_Send_Email_Relatorio" sap:VirtualizedContainerService.HintSize="616,3080" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="sq_Send_Email_Relatorio" sap:VirtualizedContainerService.HintSize="616,3204.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="var_strHTMLtable" />
       <Variable x:TypeArguments="x:String" Name="var_strCorpoEmail" />
@@ -135,7 +135,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Trata os dados para incluir em corpo de Email" DisplayName="wf_TratarDados" sap:VirtualizedContainerService.HintSize="572.8,1912.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap2010:Annotation.AnnotationText="Trata os dados para incluir em corpo de Email" DisplayName="wf_TratarDados" sap:VirtualizedContainerService.HintSize="572.8,2037.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -154,13 +154,13 @@
         </Assign.Value>
       </Assign>
       <ui:ClearDataTable DataTable="[var_dtDadosAjustados]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="510.4,80.8" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[var_dtDadosAtual]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510.4,1266.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[var_dtDadosAtual]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510.4,1391.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,1149.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,1274.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="var_strPercurso" />
                 <Variable x:TypeArguments="x:String" Name="var_strAeroportoOrigem" />
@@ -171,15 +171,19 @@
                 <Variable x:TypeArguments="x:String" Name="var_strClasse" />
                 <Variable x:TypeArguments="x:String" Name="var_strValor" />
                 <Variable x:TypeArguments="x:String" Name="var_strDataPesquisa" />
+                <Variable x:TypeArguments="x:String" Name="var_strDuracao" />
+                <Variable x:TypeArguments="x:String" Name="var_strEscala" />
+                <Variable x:TypeArguments="x:String" Name="var_strCia" />
+                <Variable x:TypeArguments="x:String" Name="var_strURL" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="433.6,538.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="433.6,663.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
                 <ui:MultipleAssign.AssignOperations>
-                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
                       <ui:AssignOperation.To>
                         <OutArgument x:TypeArguments="x:String">[var_strDataIda]</OutArgument>
@@ -300,6 +304,38 @@
                         <InArgument x:TypeArguments="x:String">[Now.ToString("dd/MM/yyyy")]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_26">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[var_strDuracao]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[CurrentRow.Item("Duracao").ToString]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_27">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[var_strEscala]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[CurrentRow.Item("Escala").ToString]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_28">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[var_strCia]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[CurrentRow.Item("Cia Aerea").ToString]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[var_strURL]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[CurrentRow.Item("Link").ToString]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
@@ -333,7 +369,7 @@
                   <InArgument x:TypeArguments="x:String">[if(var_strPercurso="Só ida",String.Empty,var_strDataVolta)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{var_strPercurso,var_strAeroportoOrigem,var_strSiglaOrig,var_strAeroportoDestino,var_strSiglaDestino,var_strDataIda,var_strQtdeDias,var_strDataVolta,var_strClasse,var_strValor,var_strDataPesquisa}]" DataTable="[var_dtDadosAjustados]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{var_strPercurso,var_strAeroportoOrigem,var_strSiglaOrig,var_strAeroportoDestino,var_strSiglaDestino,var_strDataIda,var_strQtdeDias,var_strDataVolta,var_strClasse,var_strValor,var_strDuracao,var_strEscala,var_strCia,var_strDataPesquisa,var_strURL}]" DataTable="[var_dtDadosAjustados]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
             </Sequence>
           </ActivityAction>
         </ui:ForEachRow.Body>
@@ -349,8 +385,12 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Email\wf_CreateTableHTML.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Email\wf_CreateTableHTML.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="arg_in_DtTabelaDados">[var_dtDadosAjustados]</InArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="arg_out_strHTML_Table">[var_strHTMLtable]</OutArgument>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="arg_in_DtTabelaDados">
+            <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="var_dtDadosAjustados" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="arg_out_strHTML_Table">
+            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="var_strHTMLtable" />
+          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <Assign sap:VirtualizedContainerService.HintSize="433.6,83.2" sap2010:WorkflowViewState.IdRef="Assign_1">
