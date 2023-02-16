@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>847.2,1172.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>798.4,1172.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -471,9 +471,9 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.Condition>[SystemException IsNot Nothing]</Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="645.6,3289.6" sap2010:WorkflowViewState.IdRef="State_2">
+                            <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="645.6,3288.8" sap2010:WorkflowViewState.IdRef="State_2">
                               <State.Entry>
-                                <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="600.8,2869.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="600.8,2868.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -481,14 +481,14 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <TryCatch.Try>
-                                    <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="564,2638.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="564,2637.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Assign DisplayName="Assign SystemException (initialization)" sap:VirtualizedContainerService.HintSize="520.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                      <Assign DisplayName="Assign SystemException (initialization)" sap:VirtualizedContainerService.HintSize="520.8,80.8" sap2010:WorkflowViewState.IdRef="Assign_5">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="s:Exception">[SystemException]</OutArgument>
                                         </Assign.To>
@@ -588,23 +588,23 @@
                                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\wf_LerExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="400,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Excel\wf_LerExcel.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InArgument x:TypeArguments="x:String" x:Key="arg_in_strCaminhoPlanilha">
-                                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Environment.CurrentDirectory+Config(&quot;Caminho_planilha&quot;).ToString" />
+                                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;PATH_ARQUIVO_EXCEL&quot;).ToString" />
                                                 </InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
-                                            <Sequence DisplayName="sq_LimparPesquisaAnterior" sap:VirtualizedContainerService.HintSize="400,83.2" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                            <Sequence DisplayName="sq_LimparPesquisaAnterior" sap:VirtualizedContainerService.HintSize="400,1008" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:WriteCell Cell="J2:J100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;Caminho_planilha&quot;).ToString]" />
-                                              <ui:WriteCell Cell="K2:K100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;Caminho_planilha&quot;).ToString]" />
-                                              <ui:WriteCell Cell="L2:L100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;Caminho_planilha&quot;).ToString]" />
-                                              <ui:WriteCell Cell="M2:M100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;Caminho_planilha&quot;).ToString]" />
-                                              <ui:WriteCell Cell="N2:N100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_5" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;Caminho_planilha&quot;).ToString]" />
-                                              <ui:WriteCell Cell="O2:O100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_6" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;Caminho_planilha&quot;).ToString]" />
+                                              <ui:WriteCell Cell="J2:J100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;PATH_ARQUIVO_EXCEL&quot;).ToString]" />
+                                              <ui:WriteCell Cell="K2:K100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;PATH_ARQUIVO_EXCEL&quot;).ToString]" />
+                                              <ui:WriteCell Cell="L2:L100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;PATH_ARQUIVO_EXCEL&quot;).ToString]" />
+                                              <ui:WriteCell Cell="M2:M100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;PATH_ARQUIVO_EXCEL&quot;).ToString]" />
+                                              <ui:WriteCell Cell="N2:N100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_5" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;PATH_ARQUIVO_EXCEL&quot;).ToString]" />
+                                              <ui:WriteCell Cell="O2:O100" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="337.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_6" SheetName="pesquisa" Text="[String.Empty]" WorkbookPath="[Config(&quot;PATH_ARQUIVO_EXCEL&quot;).ToString]" />
                                             </Sequence>
                                           </Sequence>
                                         </If.Then>
@@ -718,8 +718,12 @@
                                               </sap:WorkflowViewStateService.ViewState>
                                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Email\sq_Send_Email_Relatorio.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="367.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Email\sq_Send_Email_Relatorio.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="arg_in_strDestinatario">[Config("email").ToString]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="arg_in_strCaminhoPlanilha">[Config("Caminho_planilha").ToString]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="arg_in_strDestinatario">
+                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;email&quot;).ToString" />
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="arg_in_strCaminhoPlanilha">
+                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;PATH_ARQUIVO_EXCEL&quot;).ToString" />
+                                                  </InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                               </ui:InvokeWorkflowFile>
                                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CloseAllApplications workflow" sap:VirtualizedContainerService.HintSize="367.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Framework\CloseAllApplications.xaml">
